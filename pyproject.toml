@@ -1,0 +1,28 @@
+[project]
+name = "chess-bot-arena"
+version = "0.1.0"
+description = "A learning project: chess bots of increasing sophistication competing in a round-robin arena."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "chess>=1.11.1",
+    "rich>=13.9.0",
+]
+
+[project.scripts]
+chess-arena-uci = "chess_arena.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chess_arena"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
