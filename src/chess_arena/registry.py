@@ -9,15 +9,12 @@ from __future__ import annotations
 from collections.abc import Callable
 
 from chess_arena.bot import Bot
-from chess_arena.bots.minimax import MinimaxBot
 from chess_arena.bots.random_bot import RandomBot
 
 BotFactory = Callable[[], Bot]
 
 _REGISTRY: dict[str, BotFactory] = {
     "random": RandomBot,
-    # Uncomment once evaluate() and negamax() in bots/minimax.py are implemented:
-    # "minimax": MinimaxBot,
 }
 
 
